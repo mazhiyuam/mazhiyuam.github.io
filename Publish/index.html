@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Publish</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.e8e4f3a3.css" as="style"><link rel="preload" href="/assets/js/app.09953bbe.js" as="script"><link rel="preload" href="/assets/js/2.5bb024bf.js" as="script"><link rel="preload" href="/assets/js/8.8fc25eb6.js" as="script"><link rel="prefetch" href="/assets/js/3.17ae4faa.js"><link rel="prefetch" href="/assets/js/4.c9929aee.js"><link rel="prefetch" href="/assets/js/5.7d249ef2.js"><link rel="prefetch" href="/assets/js/6.4e53a11e.js"><link rel="prefetch" href="/assets/js/7.3c2fd268.js"><link rel="prefetch" href="/assets/js/9.5a9e5062.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e8e4f3a3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/" aria-current="page" class="sidebar-link">Hello VuePress</a></li><li><a href="/Publish/" aria-current="page" class="active sidebar-link">Publish</a></li><li><a href="/MyPage/MyPage.html" class="sidebar-link">自定义标题</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="publish"><a href="#publish" class="header-anchor">#</a> Publish</h1> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token shebang important">#!/usr/bin/env sh</span>
+
+<span class="token comment"># 确保脚本抛出遇到的错误</span>
+<span class="token builtin class-name">set</span> <span class="token parameter variable">-e</span>
+
+<span class="token comment"># 生成静态文件</span>
+<span class="token function">yarn</span> run docs:build
+
+<span class="token comment"># 进入生成的文件夹</span>
+<span class="token builtin class-name">cd</span> docs/.vuepress/dist
+
+<span class="token comment"># 如果是发布到自定义域名</span>
+<span class="token comment"># echo 'www.example.com' &gt; CNAME</span>
+
+<span class="token function">git</span> init
+<span class="token function">git</span> checkout <span class="token parameter variable">-b</span> <span class="token string">&quot;main&quot;</span>
+<span class="token function">git</span> <span class="token function">add</span> <span class="token parameter variable">-A</span>
+<span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">'deploy'</span>
+
+<span class="token comment"># 如果发布到 https://&lt;USERNAME&gt;.github.io</span>
+ <span class="token function">git</span> push <span class="token parameter variable">-f</span> git@github.com:mazhiyuam/mazhiyuam.github.io.git main
+
+<span class="token comment"># 如果发布到 https://&lt;USERNAME&gt;.github.io/&lt;REPO&gt;</span>
+<span class="token comment"># git push -f git@github.com:&lt;USERNAME&gt;/&lt;REPO&gt;.git master:gh-pages</span>
+
+<span class="token builtin class-name">cd</span> -
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/" class="prev router-link-active">
+        Hello VuePress
+      </a></span> <span class="next"><a href="/MyPage/MyPage.html">
+        自定义标题
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.09953bbe.js" defer></script><script src="/assets/js/2.5bb024bf.js" defer></script><script src="/assets/js/8.8fc25eb6.js" defer></script>
+  </body>
+</html>
